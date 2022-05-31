@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="Main">
+    </bean>
+
+    <bean class="repositories.QuestionReaderImpl" name="QuestionReader">
+        <property name="fileName" value="./questions.csv">
+        </property>
+    </bean>
+
+    <bean class="services.QuestionPrinterImpl" name="QuestionPrinter">
+    </bean>
+
+    <bean name="QuestionService" class="services.QuestionServiceImpl">
+        <constructor-arg name="reader" ref="QuestionReader"/>
+        <constructor-arg name="printer" ref="QuestionPrinter"/>
+    </bean>
+
+</beans>
