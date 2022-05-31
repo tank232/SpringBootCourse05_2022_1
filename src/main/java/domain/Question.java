@@ -5,14 +5,14 @@ import java.util.List;
 
 public class Question {
 
-    public Question() {
-        answers = new ArrayList<>();
-    }
-
     private int id;
     private String question;
     private short rightAnswer;
-    private List<String> answers;
+    private List<String> answers= new ArrayList<>();
+    public Question() {
+    }
+
+
 
     public int getId() {
         return id;
